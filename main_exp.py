@@ -94,10 +94,6 @@ class LinearClassifier(torch.nn.Module):
 
     
 
-import matplotlib.pyplot as plt
-import pandas as pd
-from sklearn import metrics
-
 def auc_bootstrap(y_true, y_pred, n_bootstraps, seed=None):
     # With help from https://stackoverflow.com/a/19132400/5666087
     bootstrapped_aucs = np.empty(n_bootstraps)
