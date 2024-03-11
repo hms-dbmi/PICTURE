@@ -1,0 +1,31 @@
+[2024-02-01 02:51:32,211][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-02-01 02:51:32,222][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-02-01 02:51:32,276][pytorch_lightning.utilities.seed][INFO] - Global seed set to 3
+[2024-02-01 02:51:32,279][src.tasks.train_task][INFO] - Instantiating datamodule <src.datamodules.vienna_feature_datamodule.ViennaFeatureDataModule>
+[2024-02-01 02:51:33,616][src.tasks.train_task][INFO] - Instantiating model <src.models.uncertainty_module.UncertaintyModuleCTransFeatures>
+[2024-02-01 02:51:34,492][torch.distributed.nn.jit.instantiator][INFO] - Created a temporary directory at /tmp/tmpp5lqmncw
+[2024-02-01 02:51:34,492][torch.distributed.nn.jit.instantiator][INFO] - Writing /tmp/tmpp5lqmncw/_remote_module_non_scriptable.py
+[2024-02-01 02:53:18,410][src.tasks.train_task][INFO] - Instantiating callbacks...
+[2024-02-01 02:53:18,410][src.utils.utils][INFO] - Instantiating callback <pytorch_lightning.callbacks.EarlyStopping>
+[2024-02-01 02:53:18,414][src.utils.utils][INFO] - Instantiating callback <pytorch_lightning.callbacks.RichModelSummary>
+[2024-02-01 02:53:18,414][src.utils.utils][INFO] - Instantiating callback <pytorch_lightning.callbacks.RichProgressBar>
+[2024-02-01 02:53:18,415][src.tasks.train_task][INFO] - Instantiating loggers...
+[2024-02-01 02:53:18,415][src.utils.utils][INFO] - Instantiating logger <pytorch_lightning.loggers.wandb.WandbLogger>
+[2024-02-01 02:53:20,645][src.tasks.train_task][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2024-02-01 02:53:20,655][pytorch_lightning.utilities.rank_zero][INFO] - Multiprocessing is handled by SLURM.
+[2024-02-01 02:53:20,658][pytorch_lightning.utilities.rank_zero][INFO] - Trainer already configured with model summary callbacks: [<class 'pytorch_lightning.callbacks.rich_model_summary.RichModelSummary'>]. Skipping setting a default `ModelSummary` callback.
+[2024-02-01 02:53:20,659][pytorch_lightning.utilities.rank_zero][INFO] - GPU available: False, used: False
+[2024-02-01 02:53:20,659][pytorch_lightning.utilities.rank_zero][INFO] - TPU available: False, using: 0 TPU cores
+[2024-02-01 02:53:20,659][pytorch_lightning.utilities.rank_zero][INFO] - IPU available: False, using: 0 IPUs
+[2024-02-01 02:53:20,660][pytorch_lightning.utilities.rank_zero][INFO] - HPU available: False, using: 0 HPUs
+[2024-02-01 02:53:20,660][src.tasks.train_task][INFO] - Logging hyperparameters!
+[2024-02-01 02:53:20,667][src.tasks.train_task][INFO] - Starting training!
+[2024-02-01 02:53:29,041][pytorch_lightning.trainer.connectors.signal_connector][INFO] - SLURM auto-requeueing enabled. Setting signal handlers.
+[2024-02-01 03:36:21,858][src.tasks.train_task][INFO] - Starting testing!
+[2024-02-01 03:36:21,863][pytorch_lightning.utilities.rank_zero][INFO] - Restoring states from the checkpoint path at /n/data2/hms/dbmi/kyu/lab/shl968/pathology_uncertainty-main/hydra_logs_CV/wMoreBenign/fold3/train/runs/2024-02-01_02-51-28/uncertainty_vienna_CTransFeature_wMoreBenign_fold3/m660a0m0/checkpoints/epoch=19-step=2760.ckpt
+[2024-02-01 03:36:21,872][pytorch_lightning.utilities.rank_zero][INFO] - Loaded model weights from checkpoint at /n/data2/hms/dbmi/kyu/lab/shl968/pathology_uncertainty-main/hydra_logs_CV/wMoreBenign/fold3/train/runs/2024-02-01_02-51-28/uncertainty_vienna_CTransFeature_wMoreBenign_fold3/m660a0m0/checkpoints/epoch=19-step=2760.ckpt
+[2024-02-01 04:39:12,018][src.tasks.train_task][INFO] - Best ckpt path: /n/data2/hms/dbmi/kyu/lab/shl968/pathology_uncertainty-main/hydra_logs_CV/wMoreBenign/fold3/train/runs/2024-02-01_02-51-28/uncertainty_vienna_CTransFeature_wMoreBenign_fold3/m660a0m0/checkpoints/epoch=19-step=2760.ckpt
+[2024-02-01 04:39:12,025][src.utils.utils][INFO] - Closing loggers...
+[2024-02-01 04:39:12,025][src.utils.utils][INFO] - Closing wandb!
+[2024-02-01 04:39:16,379][src.utils.utils][INFO] - Output dir: /n/data2/hms/dbmi/kyu/lab/shl968/pathology_uncertainty-main/hydra_logs_CV/wMoreBenign/fold3/train/runs/2024-02-01_02-51-28
+[2024-02-01 04:39:16,380][src.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...

@@ -1,0 +1,41 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /datamodule: vienna.yaml
+  - override /model: uncertainty.yaml
+  - override /callbacks: default.yaml
+  - override /trainer: default.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+tags: ["uncertainty", "ivygap"]
+
+seed: 0
+
+trainer:
+  min_epochs: 30
+  max_epochs: 50
+  accelerator: gpu
+  devices: 1
+  precision: 16
+  deterministic: True
+
+model:
+  optimizer:
+    lr: 0.00000892411631419236
+    weight_decay: 0.008748318219260143
+  latent_dim: 20
+  radial_flow_layers: 2
+  seed: 0
+
+datamodule:
+  batch_size: 16
+  num_workers: 6
+  pin_memory: true
+
+paths:
+  log_dir: /n/data2/hms/dbmi/kyu/lab/raa006/pathology_uncertainty/logs/

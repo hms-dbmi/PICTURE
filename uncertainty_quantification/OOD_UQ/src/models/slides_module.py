@@ -11,7 +11,7 @@ from torchmetrics import MaxMetric
 from torchmetrics.classification.accuracy import Accuracy
 from torchvision import transforms
 from torchvision.utils import make_grid
-from transformers import ViTForImageClassification, SwinModel
+# from transformers import ViTForImageClassification, SwinModel
 
 
 class SlidesModule(LightningModule):

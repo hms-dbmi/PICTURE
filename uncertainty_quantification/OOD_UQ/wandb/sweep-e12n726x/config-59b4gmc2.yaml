@@ -1,0 +1,10 @@
+wandb_version: 1
+
+model.latent_dim:
+  value: 9
+model.optimizer.lr:
+  value: 1.245315495784498e-06
+model.optimizer.weight_decay:
+  value: 0.013635476936868503
+model.radial_flow_layers:
+  value: 10

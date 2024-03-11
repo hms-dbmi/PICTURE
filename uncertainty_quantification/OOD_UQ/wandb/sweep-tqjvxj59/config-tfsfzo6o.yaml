@@ -1,0 +1,16 @@
+wandb_version: 1
+
+model.certainty_budget:
+  value: normal
+model.entropy_weight:
+  value: 3.6350100348780523e-08
+model.flow_type:
+  value: radial
+model.latent_dim:
+  value: 4
+model.optimizer.lr:
+  value: 2.859926044431166e-05
+model.optimizer.weight_decay:
+  value: 0.0024379522982536264
+model.radial_flow_layers:
+  value: 2

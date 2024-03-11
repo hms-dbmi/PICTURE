@@ -1,0 +1,401 @@
+[2024-02-03 02:51:02,088][src.tasks.train_task][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2024-02-03 02:51:02,095][pytorch_lightning.utilities.rank_zero][INFO] - Multiprocessing is handled by SLURM.
+[2024-02-03 02:51:02,096][pytorch_lightning.utilities.rank_zero][INFO] - Trainer already configured with model summary callbacks: [<class 'pytorch_lightning.callbacks.rich_model_summary.RichModelSummary'>]. Skipping setting a default `ModelSummary` callback.
+[2024-02-03 02:51:02,097][pytorch_lightning.utilities.rank_zero][INFO] - GPU available: False, used: False
+[2024-02-03 02:51:02,097][pytorch_lightning.utilities.rank_zero][INFO] - TPU available: False, using: 0 TPU cores
+[2024-02-03 02:51:02,097][pytorch_lightning.utilities.rank_zero][INFO] - IPU available: False, using: 0 IPUs
+[2024-02-03 02:51:02,097][pytorch_lightning.utilities.rank_zero][INFO] - HPU available: False, using: 0 HPUs
+[2024-02-03 02:51:02,098][src.tasks.train_task][INFO] - Logging hyperparameters!
+[2024-02-03 02:51:02,103][src.tasks.train_task][INFO] - Starting training!
+train: 281 patients, val: 141 patients, test: 141 patients, total: 563 patients
+┏━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃    ┃ Name                        ┃ Type                          ┃ Params ┃
+┡━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ 0  │ net                         │ NaturalPosteriorNetworkModel  │  3.5 K │
+│ 1  │ net.encoder                 │ Sequential                    │  3.1 K │
+│ 2  │ net.encoder.0               │ Identity                      │      0 │
+│ 3  │ net.encoder.1               │ Sequential                    │  3.1 K │
+│ 4  │ net.encoder.1.0             │ Sequential                    │  3.1 K │
+│ 5  │ net.encoder.1.0.0           │ Dropout                       │      0 │
+│ 6  │ net.encoder.1.0.1           │ Linear                        │  3.1 K │
+│ 7  │ net.flow                    │ MaskedAutoregressiveFlow      │    362 │
+│ 8  │ net.flow.transforms         │ ModuleList                    │    362 │
+│ 9  │ net.flow.transforms.0       │ MaskedAutoregressiveTransform │    177 │
+│ 10 │ net.flow.transforms.0.net   │ MADE                          │    177 │
+│ 11 │ net.flow.transforms.0.net.0 │ _MaskedLinear                 │     65 │
+│ 12 │ net.flow.transforms.0.net.1 │ LeakyReLU                     │      0 │
+│ 13 │ net.flow.transforms.0.net.2 │ _MaskedLinear                 │    112 │
+│ 14 │ net.flow.transforms.1       │ BatchNormTransform            │      8 │
+│ 15 │ net.flow.transforms.2       │ MaskedAutoregressiveTransform │    177 │
+│ 16 │ net.flow.transforms.2.net   │ MADE                          │    177 │
+│ 17 │ net.flow.transforms.2.net.0 │ _MaskedLinear                 │     65 │
+│ 18 │ net.flow.transforms.2.net.1 │ LeakyReLU                     │      0 │
+│ 19 │ net.flow.transforms.2.net.2 │ _MaskedLinear                 │    112 │
+│ 20 │ net.output                  │ CategoricalOutput             │     25 │
+│ 21 │ net.output.linear           │ Linear                        │     25 │
+│ 22 │ net.output.prior            │ DirichletPrior                │      0 │
+│ 23 │ net.scaler                  │ EvidenceScaler                │      0 │
+│ 24 │ criterion                   │ BayesianLoss                  │      0 │
+│ 25 │ train_acc                   │ Accuracy                      │      0 │
+│ 26 │ val_acc                     │ Accuracy                      │      0 │
+│ 27 │ test_acc                    │ Accuracy                      │      0 │
+│ 28 │ train_auroc                 │ AUROC                         │      0 │
+│ 29 │ val_auroc                   │ AUROC                         │      0 │
+│ 30 │ test_auroc                  │ AUROC                         │      0 │
+│ 31 │ brier_score                 │ BrierScore                    │      0 │
+│ 32 │ alea_conf_pr                │ AUCPR                         │      0 │
+│ 33 │ alea_conf_roc               │ AUROC                         │      0 │
+│ 34 │ epist_conf_pr               │ AUCPR                         │      0 │
+│ 35 │ epist_conf_roc              │ AUROC                         │      0 │
+│ 36 │ val_acc_best                │ MaxMetric                     │      0 │
+└────┴─────────────────────────────┴───────────────────────────────┴────────┘
+Trainable params: 3.5 K
+Non-trainable params: 0
+Total params: 3.5 K
+Total estimated model params size (MB): 0
+[2024-02-03 02:51:11,132][pytorch_lightning.trainer.connectors.signal_connector][INFO] - SLURM auto-requeueing enabled. Setting signal handlers.
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/pytorch_lightning/core/optimizer.py:380: RuntimeWarning: Found unsupported keys in the optimizer configuration: {'scheduler'}
+  rank_zero_warn(
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/pytorch_lightning/utilities/data.py:72: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 1000. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: No positive samples in targets, true positive value should be meaningless. Returning zero tensor in true positive score
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 19.90it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/pytorch_lightning/utilities/data.py:72: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 586. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/pytorch_lightning/utilities/data.py:72: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 941. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+
+100%|██████████| 63/63 [00:03<00:00, 18.38it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 18.48it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 18.12it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 18.39it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 18.28it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 18.76it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 18.43it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 18.32it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 17.94it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+
+100%|██████████| 63/63 [00:05<00:00, 12.29it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+
+100%|██████████| 63/63 [00:04<00:00, 14.17it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 18.01it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 18.11it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 18.11it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 18.16it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 18.36it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 18.71it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 18.59it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+
+100%|██████████| 63/63 [00:03<00:00, 18.67it/s]
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+100%|██████████| 63/63 [00:03<00:00, 18.50it/s]
+/n/data2/hms/dbmi/kyu/lab/shl968/pathology_uncertainty-main/src/models/uncertainty_module.py:556: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+  plt.figure()
+Epoch 19  ━━━━━━━━━━━━━━━━━ 207/207 0:02:19 • 0:00:00 1.50it/s loss: 0.684
+                                                               v_num: osgs
+                                                               val/acc: 0.875
+                                                               val/acc_best:
+                                                               0.875 train/acc:
+                                                               0.904
+[2024-02-03 03:39:20,831][src.tasks.train_task][INFO] - Starting testing!
+[2024-02-03 03:39:20,836][pytorch_lightning.utilities.rank_zero][INFO] - Restoring states from the checkpoint path at /n/data2/hms/dbmi/kyu/lab/shl968/pathology_uncertainty-main/hydra_logs_CV/wMoreBenign/fold7/train/runs/2024-02-03_02-49-34/uncertainty_vienna_CTransFeature_wMoreBenign_fold7/tapjosgs/checkpoints/epoch=19-step=2760.ckpt
+[2024-02-03 03:39:20,845][pytorch_lightning.utilities.rank_zero][INFO] - Loaded model weights from checkpoint at /n/data2/hms/dbmi/kyu/lab/shl968/pathology_uncertainty-main/hydra_logs_CV/wMoreBenign/fold7/train/runs/2024-02-03_02-49-34/uncertainty_vienna_CTransFeature_wMoreBenign_fold7/tapjosgs/checkpoints/epoch=19-step=2760.ckpt
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/pytorch_lightning/utilities/data.py:72: UserWarning: Trying to infer the `batch_size` from an ambiguous collection. The batch size we found is 993. To avoid any miscalculations, use `self.log(..., batch_size=batch_size)`.
+  warning_cache.warn(
+
+
+
+100%|██████████| 140/140 [00:07<00:00, 19.29it/s]
+/n/data2/hms/dbmi/kyu/lab/shl968/pathology_uncertainty-main/src/models/uncertainty_module.py:626: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored
+  ax1.scatter(embeddings_tsne[idxs, 0], embeddings_tsne[idxs, 1], c=class_colors[idxs], label=label, alpha=0.5, s=4, cmap="RdYlGn")
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Torchmetrics v0.9 introduced a new argument class property called `full_state_update` that has
+                not been set for this class (AUCPR). The property determines if `update` by
+                default needs access to the full metric state. If this is not the case, significant speedups can be
+                achieved and we recommend setting this to `False`.
+                We provide an checking function
+                `from torchmetrics.utilities import check_forward_no_full_state`
+                that can be used to check if the `full_state_update=True` (old and potential slower behaviour,
+                default for now) or if `full_state_update=False` can be used safely.
+  warnings.warn(*args, **kwargs)
+/home/shl968/.conda/envs/uncertainty/lib/python3.10/site-packages/torchmetrics/utilities/prints.py:36: UserWarning: Metric `AUROC` will save all targets and predictions in buffer. For large datasets this may lead to large memory footprint.
+  warnings.warn(*args, **kwargs)
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃          Test metric          ┃         DataLoader 0          ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│           test/acc            │      0.9444207549095154       │
+│     test/aleatoric_AUPRC      │      0.8566871881484985       │
+│    test/aleatoric_AUPRC_0     │      0.8654279708862305       │
+│    test/aleatoric_AUPRC_1     │      0.04945299029350281      │
+│ test/aleatoric_AUPRC_MacroAvg │      0.45744048058986664      │
+│     test/aleatoric_AUROC      │      0.8564875721931458       │
+│    test/aleatoric_AUROC_0     │      0.8775033354759216       │
+│    test/aleatoric_AUROC_1     │      0.49937936663627625      │
+│ test/aleatoric_AUROC_MacroAvg │      0.6884413510560989       │
+│   test/aleatoric_confidence   │      0.1737395077943802       │
+│           test/auc            │       0.909743070602417       │
+│       test/brier_score        │      0.7731233239173889       │
+│    test/calibration_metric    │      0.8628360033035278       │
+│     test/epistemic_AUPRC      │      0.8632492423057556       │
+│    test/epistemic_AUPRC_0     │      0.8717153668403625       │
+│    test/epistemic_AUPRC_1     │      0.05736427754163742      │
+│ test/epistemic_AUPRC_MacroAvg │        0.464539822191         │
+│     test/epistemic_AUROC      │      0.8749198317527771       │
+│    test/epistemic_AUROC_0     │      0.8943980932235718       │
+│    test/epistemic_AUROC_1     │       0.543940544128418       │
+│ test/epistemic_AUROC_MacroAvg │      0.7191693186759949       │
+│   test/epistemic_confidence   │      0.09891378879547119      │
+│           test/loss           │      1.4713302850723267       │
+└───────────────────────────────┴───────────────────────────────┘
+Testing ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68/68 0:00:44 • 0:00:00 1.51it/s
+[2024-02-03 04:41:42,273][src.tasks.train_task][INFO] - Best ckpt path: /n/data2/hms/dbmi/kyu/lab/shl968/pathology_uncertainty-main/hydra_logs_CV/wMoreBenign/fold7/train/runs/2024-02-03_02-49-34/uncertainty_vienna_CTransFeature_wMoreBenign_fold7/tapjosgs/checkpoints/epoch=19-step=2760.ckpt
+[2024-02-03 04:41:42,280][src.utils.utils][INFO] - Closing loggers...
+[2024-02-03 04:41:42,281][src.utils.utils][INFO] - Closing wandb!

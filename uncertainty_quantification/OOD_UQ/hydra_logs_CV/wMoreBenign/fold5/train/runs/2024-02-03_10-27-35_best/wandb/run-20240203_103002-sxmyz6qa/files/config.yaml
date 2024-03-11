@@ -1,0 +1,454 @@
+wandb_version: 1
+
+model.certainty_budget:
+  desc: null
+  value: exp
+model.entropy_weight:
+  desc: null
+  value: 1.3820913969818686e-07
+model.latent_dim:
+  desc: null
+  value: 16
+model.optimizer.lr:
+  desc: null
+  value: 6.7798177905988136e-06
+model.optimizer.weight_decay:
+  desc: null
+  value: 0.006823422138125737
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.6
+    cli_version: 0.16.1
+    framework: huggingface
+    huggingface_version: 4.21.0
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1706974202.371282
+    t:
+      1:
+      - 1
+      - 5
+      - 9
+      - 11
+      - 41
+      - 49
+      - 50
+      - 53
+      - 55
+      - 63
+      - 80
+      2:
+      - 1
+      - 5
+      - 9
+      - 11
+      - 41
+      - 49
+      - 50
+      - 53
+      - 55
+      - 63
+      - 80
+      3:
+      - 2
+      - 5
+      - 7
+      - 23
+      4: 3.10.6
+      5: 0.16.1
+      6: 4.21.0
+      8:
+      - 5
+      13: linux-x86_64
+    m:
+    - 1: trainer/global_step
+      6:
+      - 3
+    - 1: val/loss
+      5: 1
+      6:
+      - 1
+    - 1: val/acc
+      5: 1
+      6:
+      - 1
+    - 1: val/brier_score
+      5: 1
+      6:
+      - 1
+    - 1: val/aleatoric_confidence
+      5: 1
+      6:
+      - 1
+    - 1: val/epistemic_confidence
+      5: 1
+      6:
+      - 1
+    - 1: val/acc_best
+      5: 1
+      6:
+      - 1
+    - 1: val/auc
+      5: 1
+      6:
+      - 1
+    - 1: val/aleatoric_AUPRC
+      5: 1
+      6:
+      - 1
+    - 1: val/aleatoric_AUROC
+      5: 1
+      6:
+      - 1
+    - 1: val/epistemic_AUPRC
+      5: 1
+      6:
+      - 1
+    - 1: val/epistemic_AUROC
+      5: 1
+      6:
+      - 1
+    - 1: val/aleatoric_AUPRC_MacroAvg
+      5: 1
+      6:
+      - 1
+    - 1: val/aleatoric_AUROC_MacroAvg
+      5: 1
+      6:
+      - 1
+    - 1: val/epistemic_AUPRC_MacroAvg
+      5: 1
+      6:
+      - 1
+    - 1: val/epistemic_AUROC_MacroAvg
+      5: 1
+      6:
+      - 1
+    - 1: val/aleatoric_AUPRC_0
+      5: 1
+      6:
+      - 1
+    - 1: val/aleatoric_AUROC_0
+      5: 1
+      6:
+      - 1
+    - 1: val/epistemic_AUPRC_0
+      5: 1
+      6:
+      - 1
+    - 1: val/epistemic_AUROC_0
+      5: 1
+      6:
+      - 1
+    - 1: val/aleatoric_AUPRC_1
+      5: 1
+      6:
+      - 1
+    - 1: val/aleatoric_AUROC_1
+      5: 1
+      6:
+      - 1
+    - 1: val/epistemic_AUPRC_1
+      5: 1
+      6:
+      - 1
+    - 1: val/epistemic_AUROC_1
+      5: 1
+      6:
+      - 1
+    - 1: val/calibration_metric
+      5: 1
+      6:
+      - 1
+    - 1: epoch
+      5: 1
+      6:
+      - 1
+    - 1: train/loss
+      5: 1
+      6:
+      - 1
+    - 1: train/acc
+      5: 1
+      6:
+      - 1
+    - 1: train/brier_score
+      5: 1
+      6:
+      - 1
+    - 1: train/aleatoric_confidence
+      5: 1
+      6:
+      - 1
+    - 1: train/epistemic_confidence
+      5: 1
+      6:
+      - 1
+    - 1: train/calibration_metric
+      5: 1
+      6:
+      - 1
+    - 1: train/auc
+      5: 1
+      6:
+      - 1
+    - 1: test/loss
+      5: 1
+      6:
+      - 1
+    - 1: test/acc
+      5: 1
+      6:
+      - 1
+    - 1: test/brier_score
+      5: 1
+      6:
+      - 1
+    - 1: test/aleatoric_confidence
+      5: 1
+      6:
+      - 1
+    - 1: test/epistemic_confidence
+      5: 1
+      6:
+      - 1
+    - 1: test/aleatoric_AUPRC
+      5: 1
+      6:
+      - 1
+    - 1: test/aleatoric_AUROC
+      5: 1
+      6:
+      - 1
+    - 1: test/epistemic_AUPRC
+      5: 1
+      6:
+      - 1
+    - 1: test/epistemic_AUROC
+      5: 1
+      6:
+      - 1
+    - 1: test/aleatoric_AUPRC_MacroAvg
+      5: 1
+      6:
+      - 1
+    - 1: test/aleatoric_AUROC_MacroAvg
+      5: 1
+      6:
+      - 1
+    - 1: test/epistemic_AUPRC_MacroAvg
+      5: 1
+      6:
+      - 1
+    - 1: test/epistemic_AUROC_MacroAvg
+      5: 1
+      6:
+      - 1
+    - 1: test/aleatoric_AUPRC_0
+      5: 1
+      6:
+      - 1
+    - 1: test/aleatoric_AUROC_0
+      5: 1
+      6:
+      - 1
+    - 1: test/epistemic_AUPRC_0
+      5: 1
+      6:
+      - 1
+    - 1: test/epistemic_AUROC_0
+      5: 1
+      6:
+      - 1
+    - 1: test/aleatoric_AUPRC_1
+      5: 1
+      6:
+      - 1
+    - 1: test/aleatoric_AUROC_1
+      5: 1
+      6:
+      - 1
+    - 1: test/epistemic_AUPRC_1
+      5: 1
+      6:
+      - 1
+    - 1: test/epistemic_AUROC_1
+      5: 1
+      6:
+      - 1
+    - 1: test/calibration_metric
+      5: 1
+      6:
+      - 1
+    - 1: test/auc
+      5: 1
+      6:
+      - 1
+model/_target_:
+  desc: null
+  value: src.models.uncertainty_module.UncertaintyModuleCTransFeatures
+model/optimizer/_target_:
+  desc: null
+  value: torch.optim.AdamW
+model/optimizer/_partial_:
+  desc: null
+  value: true
+model/optimizer/lr:
+  desc: null
+  value: 6.7798177905988136e-06
+model/optimizer/weight_decay:
+  desc: null
+  value: 0.006823422138125737
+model/latent_dim:
+  desc: null
+  value: 16
+model/radial_flow_layers:
+  desc: null
+  value: 2
+model/entropy_weight:
+  desc: null
+  value: 1.3820913969818686e-07
+model/flow_type:
+  desc: null
+  value: MAF
+model/certainty_budget:
+  desc: null
+  value: exp
+model/locked_encoder:
+  desc: null
+  value: true
+model/extra_ood:
+  desc: null
+  value: true
+model/cancer_ood:
+  desc: null
+  value: true
+model/seed:
+  desc: null
+  value: 5
+model/params/total:
+  desc: null
+  value: 17287
+model/params/trainable:
+  desc: null
+  value: 17287
+model/params/non_trainable:
+  desc: null
+  value: 0
+datamodule/_target_:
+  desc: null
+  value: src.datamodules.vienna_feature_datamodule.ViennaFeatureDataModule
+datamodule/batch_size:
+  desc: null
+  value: 1000
+datamodule/train_val_test_split:
+  desc: null
+  value:
+  - 0.5
+  - 0.25
+  - 0.25
+datamodule/num_workers:
+  desc: null
+  value: 4
+datamodule/pin_memory:
+  desc: null
+  value: true
+datamodule/class_balancing:
+  desc: null
+  value: false
+trainer/_target_:
+  desc: null
+  value: pytorch_lightning.Trainer
+trainer/default_root_dir:
+  desc: null
+  value: /n/data2/hms/dbmi/kyu/lab/shl968/pathology_uncertainty-main/hydra_logs_CV/wMoreBenign/fold5/train/runs/2024-02-03_10-27-35
+trainer/min_epochs:
+  desc: null
+  value: 10
+trainer/max_epochs:
+  desc: null
+  value: 20
+trainer/accelerator:
+  desc: null
+  value: cpu
+trainer/devices:
+  desc: null
+  value: 1
+trainer/precision:
+  desc: null
+  value: 32
+trainer/deterministic:
+  desc: null
+  value: false
+trainer/check_val_every_n_epoch:
+  desc: null
+  value: 1
+callbacks/model_checkpoint:
+  desc: null
+  value: val/epistemic_confidence_auc_roc
+callbacks/early_stopping/_target_:
+  desc: null
+  value: pytorch_lightning.callbacks.EarlyStopping
+callbacks/early_stopping/monitor:
+  desc: null
+  value: val/acc
+callbacks/early_stopping/min_delta:
+  desc: null
+  value: 0.0
+callbacks/early_stopping/patience:
+  desc: null
+  value: 100
+callbacks/early_stopping/verbose:
+  desc: null
+  value: false
+callbacks/early_stopping/mode:
+  desc: null
+  value: max
+callbacks/early_stopping/strict:
+  desc: null
+  value: true
+callbacks/early_stopping/check_finite:
+  desc: null
+  value: true
+callbacks/early_stopping/stopping_threshold:
+  desc: null
+  value: None
+callbacks/early_stopping/divergence_threshold:
+  desc: null
+  value: None
+callbacks/early_stopping/check_on_train_epoch_end:
+  desc: null
+  value: None
+callbacks/model_summary/_target_:
+  desc: null
+  value: pytorch_lightning.callbacks.RichModelSummary
+callbacks/model_summary/max_depth:
+  desc: null
+  value: -1
+callbacks/rich_progress_bar/_target_:
+  desc: null
+  value: pytorch_lightning.callbacks.RichProgressBar
+extras/ignore_warnings:
+  desc: null
+  value: false
+extras/enforce_tags:
+  desc: null
+  value: true
+extras/print_config:
+  desc: null
+  value: true
+task_name:
+  desc: null
+  value: train
+tags:
+  desc: null
+  value:
+  - uncertainty
+  - ivygap
+ckpt_path:
+  desc: null
+  value: None
+seed:
+  desc: null
+  value: 5

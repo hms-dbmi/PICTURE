@@ -1,0 +1,6 @@
+- experiment=CTransFeatures_vienna_w_benign_quick_fold6.yaml
+- model.certainty_budget=exp
+- model.entropy_weight=3.085059286283392e-08
+- model.latent_dim=16
+- model.optimizer.lr=9.654823816673484e-05
+- model.optimizer.weight_decay=0.0005501529979490454

@@ -1,0 +1,21 @@
+[2024-02-02 14:54:35,348][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2024-02-02 14:54:35,364][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2024-02-02 14:54:35,434][src.tasks.eval_task][INFO] - Instantiating datamodule <src.datamodules.vienna_feature_datamodule.ViennaFeatureDataModule>
+[2024-02-02 14:54:38,267][src.tasks.eval_task][INFO] - Instantiating model <src.models.uncertainty_module.UncertaintyModuleCTransFeatures>
+[2024-02-02 14:54:39,833][torch.distributed.nn.jit.instantiator][INFO] - Created a temporary directory at /tmp/tmpc4glx75u
+[2024-02-02 14:54:39,835][torch.distributed.nn.jit.instantiator][INFO] - Writing /tmp/tmpc4glx75u/_remote_module_non_scriptable.py
+[2024-02-02 14:57:13,690][src.tasks.eval_task][INFO] - Instantiating loggers...
+[2024-02-02 14:57:13,691][src.utils.utils][INFO] - Instantiating logger <pytorch_lightning.loggers.wandb.WandbLogger>
+[2024-02-02 14:57:23,750][src.tasks.eval_task][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2024-02-02 14:57:23,756][pytorch_lightning.utilities.rank_zero][INFO] - Multiprocessing is handled by SLURM.
+[2024-02-02 14:57:23,758][pytorch_lightning.utilities.rank_zero][INFO] - GPU available: False, used: False
+[2024-02-02 14:57:23,759][pytorch_lightning.utilities.rank_zero][INFO] - TPU available: False, using: 0 TPU cores
+[2024-02-02 14:57:23,759][pytorch_lightning.utilities.rank_zero][INFO] - IPU available: False, using: 0 IPUs
+[2024-02-02 14:57:23,759][pytorch_lightning.utilities.rank_zero][INFO] - HPU available: False, using: 0 HPUs
+[2024-02-02 14:57:23,759][src.tasks.eval_task][INFO] - Logging hyperparameters!
+[2024-02-02 14:57:23,766][src.tasks.eval_task][INFO] - Starting testing!
+[2024-02-02 14:57:35,742][pytorch_lightning.utilities.rank_zero][INFO] - Restoring states from the checkpoint path at /n/data2/hms/dbmi/kyu/lab/shl968/pathology_uncertainty-main/hydra_logs_CV/wMoreBenign/fold0/train/runs/2024-01-31_13-28-33_best/uncertainty_vienna_CTransFeature_wMoreBenign_fold0/1p7k8pd0/checkpoints/epoch=19-step=2760.ckpt
+[2024-02-02 14:57:35,771][pytorch_lightning.utilities.rank_zero][INFO] - Loaded model weights from checkpoint at /n/data2/hms/dbmi/kyu/lab/shl968/pathology_uncertainty-main/hydra_logs_CV/wMoreBenign/fold0/train/runs/2024-01-31_13-28-33_best/uncertainty_vienna_CTransFeature_wMoreBenign_fold0/1p7k8pd0/checkpoints/epoch=19-step=2760.ckpt
+[2024-02-02 16:20:11,009][src.utils.utils][INFO] - Closing loggers...
+[2024-02-02 16:20:11,010][src.utils.utils][INFO] - Closing wandb!
+[2024-02-02 16:20:16,062][src.utils.utils][INFO] - Output dir: /n/data2/hms/dbmi/kyu/lab/shl968/pathology_uncertainty-main/hydra_logs_CV/wBenign/fold2/eval/runs/2024-02-02_14-54-27

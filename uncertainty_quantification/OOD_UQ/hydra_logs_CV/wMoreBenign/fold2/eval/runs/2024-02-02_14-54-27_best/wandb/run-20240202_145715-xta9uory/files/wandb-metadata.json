@@ -1,0 +1,136 @@
+{
+    "os": "Linux-3.10.0-1160.108.1.el7.x86_64-x86_64-with-glibc2.17",
+    "python": "3.10.6",
+    "heartbeatAt": "2024-02-02T19:57:16.370106",
+    "startedAt": "2024-02-02T19:57:15.619771",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "experiment=CTransFeatures_vienna_w_benign_quick_fold2_eval.yaml"
+    ],
+    "state": "running",
+    "program": "/n/data2/hms/dbmi/kyu/lab/shl968/pathology_uncertainty-main/src/eval.py",
+    "codePathLocal": "src/eval.py",
+    "codePath": "src/eval.py",
+    "host": "compute-f-17-11.o2.rc.hms.harvard.edu",
+    "username": "shl968",
+    "executable": "/home/shl968/.conda/envs/uncertainty/bin/python",
+    "cpu_count": 20,
+    "cpu_count_logical": 20,
+    "cpu_freq": {
+        "current": 3139.4804999999997,
+        "min": 1200.0,
+        "max": 3600.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3099.926,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3199.902,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3099.926,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3155.126,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3099.926,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3140.429,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3099.926,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3108.471,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3100.097,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3135.473,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3099.926,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3099.926,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3099.926,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3252.88,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3099.926,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3276.806,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3099.926,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3261.425,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3099.926,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 3274.584,
+            "min": 1200.0,
+            "max": 3600.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 19.521484375,
+            "used": 6.634986877441406
+        }
+    },
+    "memory": {
+        "total": 188.70140075683594
+    }
+}

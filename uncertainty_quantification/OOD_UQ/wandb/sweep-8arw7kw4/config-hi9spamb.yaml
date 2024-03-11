@@ -1,0 +1,12 @@
+wandb_version: 1
+
+model.certainty_budget:
+  value: exp-half
+model.entropy_weight:
+  value: 1.5316086646643792e-08
+model.latent_dim:
+  value: 8
+model.optimizer.lr:
+  value: 3.5719593178576965e-05
+model.optimizer.weight_decay:
+  value: 0.00010246080832427263

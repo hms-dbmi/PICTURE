@@ -1,0 +1,16 @@
+wandb_version: 1
+
+model.certainty_budget:
+  value: exp
+model.entropy_weight:
+  value: 8.956424713976655e-07
+model.flow_type:
+  value: MAF
+model.latent_dim:
+  value: 4
+model.optimizer.lr:
+  value: 3.414373440839826e-05
+model.optimizer.weight_decay:
+  value: 0.000902660618587577
+model.radial_flow_layers:
+  value: 2
