@@ -49,7 +49,10 @@ python src/train.py trainer.max_epochs=20 datamodule.batch_size=64
 ## Reproducibility of papers results
 
 <!-- You can download the weights on [huggingface](https://huggingface.co/raphaelattias/yulab-uncertainty-posterior/blob/main/epoch_031.ckpt). -->
-The weights are stored in : hydra_logs_CV/wMoreBenign/fold0/train/runs/[RUN_DATE]/[RUN_NAME]
+The weights are stored in :
+```bash
+best_ckpts/
+```
 
 In order to perform the hyper parameter sweep which we used to obtain the final model:
 ```bash
