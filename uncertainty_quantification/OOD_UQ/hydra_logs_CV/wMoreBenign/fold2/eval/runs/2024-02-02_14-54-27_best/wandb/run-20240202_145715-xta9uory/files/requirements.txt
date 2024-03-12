@@ -138,7 +138,7 @@ typing-extensions==4.6.3
 tzdata==2023.3
 urllib3==1.26.16
 wandb==0.16.1
-werkzeug==2.3.6
+werkzeug==2.3.8
 wheel==0.41.2
 wrapt==1.14.1
 yarl==1.9.4
