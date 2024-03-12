@@ -1,6 +1,0 @@
-- experiment=CTransFeatures_vienna_w_benign_quick_fold3.yaml
-- model.certainty_budget=constant
-- model.entropy_weight=0.0008794109997096765
-- model.latent_dim=8
-- model.optimizer.lr=0.0004432882093642407
-- model.optimizer.weight_decay=0.08875023260615028
