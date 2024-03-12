@@ -1,0 +1,10 @@
+_target_: src.models.slides_module.SlidesModule
+
+optimizer:
+  _target_: torch.optim.AdamW
+  _partial_: true
+  lr: 0.00065912
+  weight_decay: 0.02031270542
+
+net:
+  _target_: src.models.transunet.transunet.TransUNet

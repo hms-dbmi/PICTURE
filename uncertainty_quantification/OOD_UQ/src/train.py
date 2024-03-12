@@ -4,7 +4,7 @@
 import hydra
 import pyrootutils
 from omegaconf import DictConfig
-
+import omegaconf
 # project root setup
 # searches for root indicators in parent dirs, like ".git", "pyproject.toml", etc.
 # sets PROJECT_ROOT environment variable (used in `configs/paths/default.yaml`)
@@ -14,7 +14,8 @@ from omegaconf import DictConfig
 root = pyrootutils.setup_root(__file__, dotenv=True, pythonpath=True)
 
 
-@hydra.main(version_base="1.2", config_path=root / "configs", config_name="train.yaml")
+# @hydra.main(version_base="1.2", config_path=str(root / "configs"), config_name="train.yaml")
+@hydra.main(version_base="1.2", config_path=str(root / "configs"), config_name="train_ctrans.yaml")
 def main(cfg: DictConfig) -> float:
 
     # imports can be nested inside @hydra.main to optimize tab completion
@@ -35,4 +36,8 @@ def main(cfg: DictConfig) -> float:
 
 
 if __name__ == "__main__":
+
+    # root = pyrootutils.setup_root(__file__, pythonpath=True)
+    # cfg = omegaconf.OmegaConf.load(root / "configs" /  "train_ctrans.yaml")
+    # main(cfg)
     main()

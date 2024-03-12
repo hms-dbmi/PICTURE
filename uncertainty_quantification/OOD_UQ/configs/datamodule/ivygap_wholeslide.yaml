@@ -1,0 +1,6 @@
+_target_: src.datamodules.whole_slide_datamodule.WholeSlideDataModule
+slides_file: "/n/data2/hms/dbmi/kyu/lab/datasets/IvyGap/compressed"
+batch_size: 12
+train_val_test_split: [0.8, 0.1, 0.1]
+num_workers: 1
+pin_memory: False

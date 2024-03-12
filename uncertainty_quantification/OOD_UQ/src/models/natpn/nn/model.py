@@ -4,7 +4,7 @@ from torch import nn
 import src.models.natpn.distributions as D
 from .flow import NormalizingFlow
 from .output import Output
-from .scaler import CertaintyBudget, EvidenceScaler
+from .scaler import CertaintyBudget, EvidenceScaler,EvidenceScalerNoClamp
 
 
 class NaturalPosteriorNetworkModel(nn.Module):
@@ -19,6 +19,7 @@ class NaturalPosteriorNetworkModel(nn.Module):
         encoder: nn.Module,
         flow: NormalizingFlow,
         output: Output,
+        clamp_scaling: bool = True,
         certainty_budget: CertaintyBudget = "normal",
         locked_encoder: bool = False,
     ):
@@ -38,7 +39,7 @@ class NaturalPosteriorNetworkModel(nn.Module):
         self.encoder = encoder
         self.flow = flow
         self.output = output
-        self.scaler = EvidenceScaler(latent_dim, certainty_budget)
+        self.scaler = EvidenceScaler(latent_dim, certainty_budget) if clamp_scaling else EvidenceScalerNoClamp(latent_dim, certainty_budget)
         self.locked_encoder = locked_encoder
 
     def aleatoric_confidence(self, x: torch.Tensor) -> torch.Tensor:
