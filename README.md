@@ -68,7 +68,7 @@ You can override any parameter from the command line like this
 python src/train.py trainer.max_epochs=20 datamodule.batch_size=64
 ```
 
-## Reproducibility of papers results
+## Reproducibility of uncertainty results
 
 <!-- You can download the weights on [huggingface](https://huggingface.co/raphaelattias/yulab-uncertainty-posterior/blob/main/epoch_031.ckpt). -->
 The weights are stored in :
