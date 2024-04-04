@@ -11,8 +11,7 @@
 
 Accurate pathological diagnosis is crucial in guiding optimal and personalized treatments for patients with central nervous system (CNS) cancers. Distinguishing several common types of CNS tumors, such as glioblastoma and primary central nervous system lymphoma (PCNSL), can be particularly challenging due to their overlapping histopathology features. Because these cancers require different treatments, fast and accurate pathological evaluation will improve patients’ clinical outcomes. we collected digital images of 4,207 pathology slides from multiple hospitals worldwide and developed the Pathology Image Characterization Tool with Uncertainty-aware Rapid Evaluation (PICTURE) system. 
 
-
-![PICTURE-Figure1-01](https://github.com/hms-dbmi/PICTURE/assets/31292151/1391afd3-47dc-4129-8e87-b8d90d381cd4)
+![PICTURE-Figure1](https://github.com/hms-dbmi/PICTURE/assets/31292151/44b2cf1b-4ab7-44a0-b5ad-49eef47f7fbd)
 
 #### Installation
 
@@ -36,17 +35,20 @@ https://portal.gdc.cancer.gov/projects/TCGA-GBM
 https://www.ebrains.eu/tools/human-brain-atlas
 
 #### Trained Model Weights.
-Simply use our trained model for differentiating Glioblastoma from others (e.g., PCNSL, OOD). 
+Simply use our trained model for differentiating Glioblastoma from others (e.g., PCNSL, OOD). The weights have been trained using the data from the Mayo Clinics, where class 0 is Glioblastoma.
+
 ```console
 python main_exp.py
 ```
 
 #### Preprocessing (Tiling)
+
 ```console
 python preprocessing/WSI_tile_extraction.py
 ```
 
 #### Cell Quantification
+
 See the ReadMe in cell_quantification
 
 #### Heatmap Visualization 
