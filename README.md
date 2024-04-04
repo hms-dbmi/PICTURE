@@ -16,12 +16,26 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-#### Toy Data
+#### Suggested System Requirements (Linux-based high performance computing (HPC) platform at Harvard Medical School)
+Linux: Ubuntu 20.04 LTS
+CUDA: 12.1
+Nvidia GPU. (All experiemnts were conducted using Nvidia A100. However, the inference should be able to use any CUDA supported GPU.)
+
+#### Publicly Available Datasets
 1. TCGA provides publicly available tissue slides for PCNSL (TCGA-DLBC) and Gliomblastoma (TCGA-GBM). [Note: One could include IDH-wildtype from TCGA-LGG, according to 2021 WHO guidelines.]
 https://portal.gdc.cancer.gov/projects/TCGA-DLBC
 https://portal.gdc.cancer.gov/projects/TCGA-GBM
 
 2. the Medical University in Vienna provides an online portal, where researchers are welcome to download both PCNSL, Gliomblastoma and other CNS tumors (out-of-distribution):
 https://www.ebrains.eu/tools/human-brain-atlas
+
+#### Trained Model Weights 
+```console
+python 
+conda activate PICTURE
+pip install --upgrade pip 
+pip install -r requirements.txt
+```
+
 
 
