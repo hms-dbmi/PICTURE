@@ -16,9 +16,9 @@ Accurate pathological diagnosis is crucial in guiding optimal and personalized t
 #### Installation
 
 ```console
-conda create -n PICTURE python=3.10 -f environment.yml -y
+conda create -n PICTURE -f enviroment.yml python=3.10 -y 
 conda activate PICTURE
-pip install --upgrade pip 
+pip install --upgrade pip
 ```
 
 #### Suggested System Requirements (Linux-based high performance computing (HPC) platform at Harvard Medical School)
