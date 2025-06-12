@@ -1,0 +1,14 @@
+_target_: src.models.uncertainty_module.UncertaintyModuleCTransFeatures
+# TODO: add optimizer and net
+optimizer:
+  _target_: torch.optim.AdamW
+  _partial_: true
+  lr: 0.00065912
+  weight_decay: 0.02031270542
+
+latent_dim: 768
+radial_flow_layers: 6
+entropy_weight: 0.00001
+flow_type: radial
+certainty_budget: normal
+locked_encoder: true
