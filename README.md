@@ -1,4 +1,4 @@
-# Pathology Imaging Characterization with Uncertainty-aware Rapid Evaluation (PICTURE)
+
 
 <a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
 <a href="https://pytorchlightning.ai/"><img alt="Lightning" src="https://img.shields.io/badge/-Lightning-792ee5?logo=pytorchlightning&logoColor=white"></a>
@@ -6,15 +6,11 @@
 <a href="https://github.com/ashleve/lightning-hydra-template"><img alt="Template" src="https://img.shields.io/badge/-Lightning--Hydra--Template-017F2F?style=flat&logo=github&labelColor=gray"></a><br>
 
 
-## Uncertainty-Aware Deep Learning Differentiates Glioblastoma from its Pathology Mimics – A Multi-Center Study
+## Uncertainty-Aware Ensemble of Foundation Models Differentiates Glioblastoma from its Mimics – A Multi-Center Study
+#### Pathology Imaging Characterization with Uncertainty-aware Rapid Evaluation (PICTURE)
 #### Abstract
 
-Accurate pathological diagnosis is crucial in guiding personalized treatments for patients with central nervous system (CNS) cancers. Distinguishing glioblastoma and primary central nervous system lymphoma (PCNSL) is particularly challenging due to their overlapping pathology features, despite the distinct treatments required. To address this challenge, we established the Pathology Image Characterization Tool with Uncertainty-aware Rapid Evaluations (PICTURE) system using 5,179 pathology slides collected worldwide. PICTURE employed Bayesian inference, deep ensemble, and normalizing flow to account for the uncertainties in its predictions and training set labels. PICTURE accurately diagnosed glioblastoma and PCNSL with an area under the receiver operating characteristic curve (AUROC) of 0.989, with the results validated in five independent cohorts (AUROC = 0.889-0.996). In addition, PICTURE identified samples belonging to 67 types of rare CNS cancers that are neither gliomas nor lymphomas. Our approaches provide a generalizable framework for differentiating pathological mimics and enable rapid diagnoses for CNS cancer patients.
-
-![image](https://github.com/user-attachments/assets/a7266a70-872e-48e9-9455-07718d6e0815)
-
-
-![PICTURE-Figure1](https://github.com/hms-dbmi/PICTURE/assets/31292151/44b2cf1b-4ab7-44a0-b5ad-49eef47f7fbd)
+Accurate pathological diagnosis is crucial in guiding personalized treatments for patients with central nervous system (CNS) cancers. Distinguishing glioblastoma and primary central nervous system lymphoma (PCNSL) is particularly challenging due to their overlapping pathology features, despite the distinct treatments required. To address this challenge, we established the Pathology Image Characterization Tool with Uncertainty-aware Rapid Evaluations (PICTURE) system using 2,141 pathology slides collected worldwide. PICTURE employed Bayesian inference, deep ensemble, and normalizing flow to account for the uncertainties in its predictions and training set labels. PICTURE accurately diagnosed glioblastoma and PCNSL with an area under the receiver operating characteristic curve (AUROC) of 0.989, with the results validated in five independent cohorts (AUROC = 0.924-0.996). In addition, PICTURE identified samples belonging to 67 types of rare CNS cancers that are neither gliomas nor lymphomas. Our approaches provide a generalizable framework for differentiating pathological mimics and enable rapid diagnoses for CNS cancer patients.
 
 #### Installation
 
