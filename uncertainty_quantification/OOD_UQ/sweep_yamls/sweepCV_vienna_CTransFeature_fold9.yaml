@@ -1,0 +1,44 @@
+program: src/train.py
+project: uncertainty_vienna_CTransFeature_wMoreBenign_fold9
+name: uncertainty_vienna_CTransFeature_wMoreBenign_fold9
+tags: [uncertainty, vienna,CTrans]
+method: bayes
+early_terminate:
+  type: hyperband
+  min_iter: 5
+metric:
+  name: val/epistemic_AUROC_MacroAvg
+  goal: maximize
+  
+parameters:
+  model.optimizer.lr:
+    min: 0.000001
+    max: 0.001
+    distribution: log_uniform_values
+  model.optimizer.weight_decay:
+    min: 0.0001
+    max: 0.1
+    distribution: log_uniform_values
+  model.latent_dim:
+    values: [4, 8, 16]
+  # model.radial_flow_layers:
+  #   min: 2
+  #   max: 4
+  #   distribution: q_log_uniform_values
+  # model.flow_type:
+  #   values: [MAF]
+  model.certainty_budget:
+    values: [constant, exp-half, exp]
+  model.entropy_weight:
+    min: 1e-9
+    max: 1e-3
+    distribution: log_uniform_values
+    
+run_cap: 200
+
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+  - "experiment=CTransFeatures_vienna_w_benign_quick_fold9.yaml"
+  - ${args_no_hyphens}

@@ -1,0 +1,15 @@
+_target_: src.models.uncertainty_module.UncertaintyModule
+# TODO: add optimizer and net
+optimizer:
+  _target_: torch.optim.AdamW
+  _partial_: true
+  lr: 0.00065912
+  weight_decay: 0.02031270542
+
+net:
+  _target_: src.models.slides_module.ViT8
+  _partial_: true
+
+latent_dim: 16
+radial_flow_layers: 6
+entropy_weight: 0.00001

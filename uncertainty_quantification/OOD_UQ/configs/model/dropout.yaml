@@ -1,0 +1,9 @@
+_target_: src.models.dropout_module.DropoutModule
+# TODO: add optimizer and net
+optimizer:
+  _target_: torch.optim.AdamW
+  _partial_: true
+  lr: 0.00065912
+  weight_decay: 0.02031270542
+
+number_of_classes: 5

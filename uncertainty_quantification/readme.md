@@ -1,0 +1,1 @@
+There are three Bayesian-based uncertainty quantification modules in PICTURE for training a generalizable classifier across multi-centers, between slide types (FFPE <-> Frozen section), and out-of-distribution detection.  
