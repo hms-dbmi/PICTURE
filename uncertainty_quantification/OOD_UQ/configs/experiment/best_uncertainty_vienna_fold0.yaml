@@ -1,0 +1,53 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /datamodule: vienna_feature.yaml
+  - override /model: uncertainty_ctrans_feature.yaml
+  - override /callbacks: default.yaml
+  - override /trainer: default.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+tags: ["uncertainty", "ivygap"]
+
+seed: 0
+
+trainer:
+  min_epochs: 10
+  max_epochs: 20
+  accelerator: cpu
+  devices: 1
+  precision: 32
+  deterministic: False
+  check_val_every_n_epoch: 1
+
+
+model:
+  optimizer:
+    lr: 1.047604438372038e-05
+    weight_decay: 0.0004315131889513714
+  latent_dim: 4
+  radial_flow_layers: 2
+  entropy_weight: 2.858359467915872e-06
+  flow_type: MAF
+  certainty_budget: exp-half
+  locked_encoder: true
+  extra_ood: true
+  seed: 0
+datamodule:
+  batch_size: 1000
+  num_workers: 4
+  pin_memory: true
+  class_balancing: False
+
+callbacks:
+  # model_checkpoint: val/epistemic_AUROC_MacroAvg
+  model_checkpoint: val/epistemic_confidence_auc_roc
+  
+
+paths:
+  log_dir: /n/data2/hms/dbmi/kyu/lab/shl968/pathology_uncertainty-main/hydra_logs_CV/wMoreBenign/fold0

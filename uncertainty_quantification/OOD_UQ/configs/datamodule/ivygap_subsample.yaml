@@ -1,0 +1,8 @@
+_target_: src.datamodules.brain_datamodule.BrainDataModule
+slides_file: "/home/cl427/GBM/results/train_vs_test_by_pt/subsample_0326.hdf5"
+batch_size: 16
+train_val_test_split: [0.8, 0.1, 0.1]
+num_workers: 6
+pin_memory: True
+p_uncertainty: 0.0
+normalize_stain: True
