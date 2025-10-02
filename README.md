@@ -8,8 +8,8 @@
 
 ## Uncertainty-Aware Ensemble of Foundation Models Differentiates Glioblastoma from its Mimics – A Multi-Center Study
 #### Pathology Imaging Characterization with Uncertainty-aware Rapid Evaluation (PICTURE)
-Zhao J et al. Nature Communications. 2025 Sep 29;16(1):8341.
-<a href="https://www.nature.com/articles/s41467-025-64249-6">https://www.nature.com/articles/s41467-025-64249-6</a>
+Zhao J et al. <i>Nature Communications.</i> 2025 Sep 29;16(1):8341.
+<a href="https://www.nature.com/articles/s41467-025-64249-6" target="_blank">https://www.nature.com/articles/s41467-025-64249-6</a>
 #### Abstract
 
 Accurate pathological diagnosis is crucial in guiding personalized treatments for patients with central nervous system (CNS) cancers. Distinguishing glioblastoma and primary central nervous system lymphoma (PCNSL) is particularly challenging due to their overlapping pathology features, despite the distinct treatments required. To address this challenge, we established the Pathology Image Characterization Tool with Uncertainty-aware Rapid Evaluations (PICTURE) system using 2,141 pathology slides collected worldwide. PICTURE employed Bayesian inference, deep ensemble, and normalizing flow to account for the uncertainties in its predictions and training set labels. PICTURE accurately diagnosed glioblastoma and PCNSL with an area under the receiver operating characteristic curve (AUROC) of 0.989, with the results validated in five independent cohorts (AUROC = 0.924-0.996). In addition, PICTURE identified samples belonging to 67 types of rare CNS cancers that are neither gliomas nor lymphomas. Our approaches provide a generalizable framework for differentiating pathological mimics and enable rapid diagnoses for CNS cancer patients.
